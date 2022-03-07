@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './HOC/Header'
+import Content from './Components/Content'
 
 function App() {
+
+  const data = {
+    bets: []
+  }
+
+  const [betSlip, setBetSlip] = useState(data)
+
+  const addBet = (betParam) => {
+    setBetSlip({
+      ...betSlip,
+      bets: [...betSlip.bets, { betParam }]
+    })
+  }
+
+  const removeBet = (betParam) => {
+    let betRemoved = {
+      bets: betSlip.bets.filter(row => row.betParam.id !== betParam)
+    }
+    setBetSlip(betRemoved)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Header betSlip={betSlip} removeBet={removeBet} />
+      <Content addBet={addBet} />
     </div>
   );
 }
