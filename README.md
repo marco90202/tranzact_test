@@ -30,7 +30,7 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Project Explanation
-Project's scope was done for the main functionalities which are list, add and remove bets into a drawer where the user can review the bets done, further validations such as disable button after placing a bet or changing the color of the button to know which bets have been done where not achieve due time constraints.
+Project's scope was done for the main functionalities which are list, add and remove bets into a drawer where the user can review the bets done, further validations such as disable button after placing a bet, changing the color of the button to know which bets have been done or fully functioning testing where not achieve due time constraints.
 
 As it was a small SPA app I decided to not use `Redux` as props were not going to be passed across many components.
 
